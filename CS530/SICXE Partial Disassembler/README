@@ -1,0 +1,226 @@
+
+**********************************************************************
+* HEADER
+**********************************************************************
+Authors: 	Cory Wixom
+Class:		CS 530 Spring 2013
+
+This program is designed to read from a file called a1.sic and
+disassemble and output the data from each instruction in that file,
+and output it to std out. Any errors will be logged to std err.
+
+1. We used a factory pattern, with a base class of Instruction
+   and specific classes of each format type.
+2. If an error occurs on a particular line, it will ouput an error
+   and continue. An error in one line should not stop it from
+   processing the next.
+3. Empty lines will output a specific error, and the program will
+   continue.
+4. The N/I flags will be masked (set to 0) for looking up the op code
+   in the pre-processing that occurs in the InstructionFactory.
+5. We received some "help" from google, in order to convert between
+   various data types/formats. That help has been documented
+   in the DataConverter. There could potentially be some improvements
+   on some of the conversions. For now, all addresses/displacements use
+   an INT data type. But, potentially the std::hex could be used instead
+   of converting back and forth between int/hex string/and binary string.
+6. In the Registry/Memory/AssemblyOperationTable classes the std::map
+   data structure was used. There could be a performance gain to switching
+   to use a hashed data structure (std::map is O(log N), whereas a hased
+   would be O(1). For the purposes of this project it will have little
+   effect on it because there is so little data.
+7. Internally the AssemblyOperationTable maintains static members. This is
+   to optimize the amount of memory used. Multiple instances of 
+   the AssemblyOperationTable can be created, but they will all share
+   the same data internally.
+ 
+
+
+**********************************************************************
+* ASSIGNMENT REQUIREMENTS
+**********************************************************************
+You shall design, develop, test, and deliver a
+partial disassembler for the SIC/XE machine. This disassembler
+shall perform the following functions:
+
+1. Open a file, named a1.sic, which will contain assembled
+   SIC/XE instructions and evaluate each instruction, one
+   per line, read from this file. Note, each instruction is
+   a stand-alone instruction; they do not operate/interact
+   with any of the other instructions in this file.
+   Continue reading instructions, one per line, until EOF.
+
+2. For each instruction, evaluate and print:
+   opcode mnemonic, nixbpe flags (if appropriate),
+   the disp/address field (if appropriate), and
+   the TA (Target Address) (if applicable).
+
+The input file (a1.sic) shall be a text file, formatted
+as follows:
+first line -- contains contents of X register
+second line -- contains contents of PC register
+third line -- contains contents of B register
+fourth line -- contains contents of memory address location 050D
+fifth...nth line -- contains instructions (one per line) to be disassembled
+
+
+**********************************************************************
+* COMPILE/EXECUTE INSTRUCTIONS 
+**********************************************************************
+
+In Unix:
+To compile and run: Run 'make' command.
+
+In Wnidows:
+g++ Program.cpp Registers.cpp DataConverter.cpp Memory.cpp AssemblyOperation.cpp AssemblyOperationTable.cpp Instruction.cpp FormatZeroInstruction.cpp FormatOneInstruction.cpp FormatTwoInstruction.cpp FormatThreeInstruction.cpp FormatFourInstruction.cpp InstructionFactory.cpp
+
+
+**********************************************************************
+* FILES
+**********************************************************************
+AssemblyOperation.cpp
+AssemblyOperation.h
+AssemblyOperationTable.cpp
+AssemblyOperationTable.h
+DataConverter.cpp
+DataConverter.h
+FormatFourInstruction.cpp
+FormatFourInstruction.h
+FormatOneInstruction.cpp
+FormatOneInstruction.h
+FormatThreeInstruction.cpp
+FormatThreeInstruction.h
+FormatTwoInstruction.cpp
+FormatTwoInstruction.h
+FormatZeroInstruction.cpp
+FormatZeroInstruction.h
+Instruction.cpp
+Instruction.h
+InstructionFactory.cpp
+InstructionFactory.h
+Memory.cpp
+Memory.h
+Program.cpp
+Registers.cpp
+Registers.h
+
+
+**********************************************************************
+* CLASS DIAGRAMS
+**********************************************************************
+-----------
+| Program |
+-----------
+main()
+
+---------------------
+| AssemblyOperation |
+---------------------
+/**
+ * The AssemblyOperation class contains all the
+ * information for a specific assembly command.
+ */
+int GetOpCode();
+std::string GetMnemonic();
+std::string GetFormat();
+std::string GetEffect();
+std::string GetNotes();
+std::string GetExample();
+int NumberOfFormatsPossible();
+
+--------------------------
+| AssemblyOperationTable |
+--------------------------
+/**
+ * The AssemblyOperationTable is an object that
+ * contains a mapping between an op code and
+ * an AssemblyOperation. Use this class to lookup
+ * all the details of an AssemblyOperation by the op code.
+ */
+AssemblyOperation Get(int opCode);
+bool IsValidOpcode(int opCode);
+
+/**
+ * The InstructionFactory will pre-process the
+ * instruction string and determine what
+ * kind of instruction it is. Then create
+ * the specific instruction class needed for it.
+ */
+ ----------------------
+ | InstructionFactory |
+-----------------------
+Instruction* Create(
+	std::string instructionString,
+	Memory memory,
+	Registers registers,
+	AssemblyOperationTable instructions);
+
+---------------
+| Instruction |
+---------------
+/**
+ * An Instruction is the base class for all
+ * instructions. Each type of instruction will
+ * inherit from this class, and must implement
+ * the ToString() method.
+ */
+Instruction (AssemblyOperation operation);
+virtual std::string ToString();
+AssemblyOperation GetAssemblyOperation();
+
+-------------------------
+| FormatZeroInstruction |
+-------------------------
+------------------------
+| FormatOneInstruction |
+------------------------
+------------------------
+| FormatTwoInstruction |
+------------------------
+--------------------------
+| FormatThreeInstruction |
+--------------------------
+-------------------------
+| FormatFourInstruction |
+-------------------------
+
+----------
+| Memory |
+----------
+/**
+ * The memory class represents all the data
+ * stored in memory.
+ */
+Get(int targetAddress )
+Insert( int targetAddress, int data)
+
+-------------
+| Registers |
+-------------
+/**
+ * The register class represents all the data
+ * stored in each of the registers.
+ */
+Get(std::string reg)
+Insert( std::string reg, int data)
+
+-----------------
+| DataConverter |
+-----------------
+/**
+ * The DataConverter is a helper utility
+ * that will convert between hex, int, and
+ * binary in order to help us process the
+ * instructions.
+ */
+static bool ConvertToIntFromHexString(int& t, const std::string& s, std::ios_base& (*f)(std::ios_base&));
+static std::string GetBinaryStringFromHexString (std::string hexString);
+static std::string GetBinaryStringFromHexChar (char hexChar);
+static int GetIntFromBinaryString (std::string binaryString);
+static std::string GetNibble(int index, std::string instruction);
+static std::string GetNibbles(int startIndex, int endIndex, std::string instruction);
+static std::string GetIntToString(int number);
+static int GetStringToInt(std::string str);
+static std::string GetStringFromBool(bool flag);
+static bool GetBoolFromChar(char flag);
+static std::string ConvertIntToHex(int i);
