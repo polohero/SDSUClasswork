@@ -1,0 +1,194 @@
+**********************************************************************
+* HEADER
+**********************************************************************
+Authors: Cory Wixom / Garrett Chandley
+Unix Logins: masc0751 / masc0745
+Class: CS 530 Spring 2013
+Date: 04/14/2013
+
+This program is designed to read from a single source file and create
+the object code for either a SIC Basic or XE machine. The object file
+created will be scl.o. Additional files can be created based on
+the command line parameters passed.
+
+**********************************************************************
+* Command Line Arugments/Usage:
+**********************************************************************
+-d : Tells the assembler to run in debug mode. This means it will
+     create the symbol table, literal table, and intermediate file.
+     (Optional).
+-i : Dumps the intermediate file from memory to a file. (Optional
+     The file will be created with a filename
+     of scl.imf. (Optional
+-s : Dumps the symbol table from memory to a file. 
+     The file will be created with a filename
+     of scl.symtab. (Optional
+-l : Dumps the literal table from memory to a file. 
+     The file will be created with a filename
+     of scl.littab. (Optional
+-f : Tells the assembler the name of the file to compile.
+     (Optional: if it is not provided the user will be prompted for 
+      one).
+
+**********************************************************************
+* Comments
+**********************************************************************
+1. We used a factory pattern, with a base class of SourceCodeInstruction
+   and specific classes of each instruction type/assembler directives.
+2. If an error occurs on a particular line, it will ouput the error/s
+   with the line the occurred at.
+3. Internally the AssemblyOperationTable, SymbolTable, and LiteralTable
+   all use a c++ map object which has O(log N) performance. Because 
+   we only had to support a single source file that performance is 
+   more than enough. Any programmer that uses this assembler 
+   would not even notice the difference.
+4. Currently the assembler will not handle comments in the middle of the
+   source code line. For example: If the line of code was
+   RSUB      .  #4. The code would treat the ".   #4" as an operand to
+   RSUB. But, it would handle a comment after #4.
+   Ex: "LDA    #4 . This is a comment". Would find the comment correctly.
+   Realistically, comments should go on their own line or
+   after the operand, so this is not a serious limitation.
+5. For the example file provided from the professor, there 
+   have been issues where leading \n were not being parsed out 
+   by the getline function from the std library. This has occurred 
+   even with dos2unix has been run. So, if you are seeing weird or
+   inconsistent results then try to save it as a unix/pc format.
+6. The assembler has been built to output the literal table
+   symbol table, or the intermediate file. See usable above for details.
+7. The assembler can handle LTORG directives. This was mostly because the
+   examples in the book used it, and in order to test it successfully, 
+   I needed to use them so I could compare the object code.
+8. The assembler will handle BASE directives, again this was so I could
+   compare the object code from the book. I did not implement NOBASE
+   though as the book didn't use it in any examples.
+9. Currently it assumes the BASE register starts at 0. This is
+   not correct, but due to time constraints (and not wanting to 
+   break anything else) I did not fix this. If a BASE command is 
+   in the source code, it will work correctly though, and assign the
+   register the correct value. One thing I thought of is to
+   immediately implant a LDB instruction and force the base register to be
+   0, so the program matches what is actually there, but regardless it 
+   is still an error. 
+10.The book is very confusing on how to handle format 3 when the
+   instruction is outside PC and BASE relative addressing. It specifically
+   says "If neither form of relative addressing is applicable and extended
+   format is not specified, then the instruction cannot be properly
+   assembled." (page 59) I would think that the instruction could still be
+   assembled, but it would just need mod records. But, because
+   of this comment I chose to follow it exactly as it says, and 
+   if the displacement is outside relative, I throw an error.
+   
+**********************************************************************
+* Program Flow
+**********************************************************************
+ Main: Program.cs
+1. Determines the input file.
+2. Then it uses the SourceCodeInstructionFactory.cs to determine the machine
+   type.
+3. Next it loops through each line in the source code file and uses the
+   SouceCodeLine.cs to parse the line. The SourceCodeLine will
+   only parse the line. It does not know anything about any specific
+   instruction.
+4. As each line is parsed, Program.cs will use the
+   SourceCodeInstructionFactory.cs to determine the specific 
+   SourceCodeInstruction for each line. The specific instruction will perform
+   any special validation needed for the instruction, as well as contain
+   the logic to create a specific line of object code.
+5. Once the specific instruction is created it is added to a
+   SourceCodeFile.cs. The SourceCodeFile is an in memory representation
+   of the intermediate file. Once the SourceCodeFile is fully 
+   constructed, Pass1 has been completed.
+6. Finally, the SourceCodeFile is handed off to the ObjectCodeFormatter
+   to format the entire file into it's object code.
+     
+
+**********************************************************************
+* ASSIGNMENT REQUIREMENTS
+**********************************************************************
+This assembler will read assembly source files (such as fig 2.1 from 
+your text) for SIC/XE and generate an object code file (such as figure 2.8).
+Input - The program will read the file from filename provided by the user 
+from the command line or if blank, prompt the user for the filename of 
+the source file to be assembled. The specification format of the 
+input file is SICXESourceFormat.pdf, which is posted in the Course’s 
+Blackboard->Documents->SIC/XE Quick Guides. Output - SIC/XE object 
+file such as those found in figure 2.8 of the text. 
+Possible extra credit for output of SYMTAB and LITTAB (into a separate file).
+Assumptions:
+  The assembler will determine if input is for SIC (basic) or XE, 
+  and generate object code appropriate for basic or XE.
+  The assembler shall support the following assembler directives: 
+  START, END, RESB, RESW, BYTE, WORD, EQU.
+  The assembler shall generate the following record types: 
+  H, T, E, M.
+  The assembler shall support literals but doesn’t have to support 
+  literal pools (possible extra credit opportunity).
+  All valid addressing modes shall be supported.
+  Source code will be restricted to just the one control section 
+  and just the one program block.
+
+
+**********************************************************************
+* COMPILE/EXECUTE INSTRUCTIONS 
+**********************************************************************
+In Unix:
+To compile and run: Run 'make' command.
+
+**********************************************************************
+* Files
+**********************************************************************
+* Main:
+Program.cpp
+
+* Base Classes:
+SourceCodeInstruction.cpp
+
+* Assembly Directives:
+BaseSourceCodeInstruction.cpp
+ByteCharSourceCodeInstruction.cpp
+ByteHexSourceCodeInstruction.cpp
+ByteIntSourceCodeInstruction.cpp
+CommentSourceCodeInstruction.cpp
+EndSourceCodeInstruction.cpp
+EquSourceCodeInstruction.cpp
+LiteralPoolSourceCodeInstruction.cpp
+LiteralSourceCodeInstruction.cpp
+ResbSourceCodeInstruction.cpp
+ReswSourceCodeInstruction.cpp
+StartSourceCodeInstruction.cpp
+WordCharSourceCodeInstruction.cpp
+WordHexSourceCodeInstruction.cpp
+WordIntSourceCodeInstruction.cpp
+
+* Formats:
+Format0SourceCodeInstruction.cpp
+Format1SourceCodeInstruction.cpp
+Format2SourceCodeInstruction.cpp
+Format3SourceCodeInstruction.cpp
+Format4SourceCodeInstruction.cpp
+
+* Data warehouses
+AssemblyOperation.cpp
+AssemblyOperationTable.cpp
+Literal.cpp
+LiteralTable.cpp
+SourceCodeFile.cpp
+SourceCodeLine.cpp
+Symbol.cpp
+SymbolTable.cpp
+ModificationRecord.cpp
+ModificationRecords.cpp
+
+* Helper utilities
+DataConverter.cpp
+ObjectCodeFormatter.cpp
+SourceCodeInstructionFactory.cpp
+
+
+
+
+
+
+
+
