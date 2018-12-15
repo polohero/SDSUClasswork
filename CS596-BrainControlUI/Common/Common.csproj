@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C217D612-405F-49FD-8F54-54996811F21F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Games.Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardCollection.cs" />
+    <Compile Include="Cards\SymbolEnum.cs" />
+    <Compile Include="Cards\SuitEnum.cs" />
+    <Compile Include="Decks\Deck.cs" />
+    <Compile Include="Diagnostics\EventLogWriter.cs" />
+    <Compile Include="Diagnostics\LogEntrySeverityEnum.cs" />
+    <Compile Include="Diagnostics\LogHelper.cs" />
+    <Compile Include="Engine\BlackjackAction.cs" />
+    <Compile Include="Engine\BlackjackDealer.cs" />
+    <Compile Include="Engine\BlackjackEngine.cs" />
+    <Compile Include="Engine\BlackjackPlayer.cs" />
+    <Compile Include="Engine\BlackjackRequest.cs" />
+    <Compile Include="Engine\BlackjackResponse.cs" />
+    <Compile Include="Engine\BlackjackResult.cs" />
+    <Compile Include="Engine\BlackjackTable.cs" />
+    <Compile Include="Engine\Dealer.cs" />
+    <Compile Include="Engine\PlayerStateEnum.cs" />
+    <Compile Include="Engine\TableHistory.cs" />
+    <Compile Include="Engine\GameTypeEnum.cs" />
+    <Compile Include="Engine\Player.cs" />
+    <Compile Include="Engine\Table.cs" />
+    <Compile Include="Engine\TableCollection.cs" />
+    <Compile Include="Engine\TableState.cs" />
+    <Compile Include="Hands\BlackjackHand.cs" />
+    <Compile Include="Hands\Hand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WCF\GameEngineProxy.cs" />
+    <Compile Include="WCF\BlackjackGameProcessor.cs" />
+    <Compile Include="WCF\IGameProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CommonClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.exe.config
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.exe
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\Common.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\Common.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\obj\x86\Debug\BlackjackService.exe
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\obj\x86\Debug\BlackjackService.pdb

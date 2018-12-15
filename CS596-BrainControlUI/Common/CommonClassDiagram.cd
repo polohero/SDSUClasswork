@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Games.Common.Cards.Card" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAADAAAAAAAQEgACAAAAAAAAAAIAAIAAgAAAADAA=</HashCode>
+      <FileName>Cards\Card.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Games.Common.Cards.CardCollection" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIQAAAAEAAAEAAAABAAIAAAAAAAAAAAAAABCAAA=</HashCode>
+      <FileName>Cards\CardCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Decks.Deck" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAIAAAAAAAAAASAAAAAAEgAAAAIAAAAkEA=</HashCode>
+      <FileName>Decks\Deck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.BlackjackDealer" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\BlackjackDealer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.BlackjackEngine" Collapsed="true">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAMAAAAAAAAAAgEgAAAEAAAQEAAAgEAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\BlackjackEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.BlackjackPlayer" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\BlackjackPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.BlackjackRequest" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIQAAAAQ=</HashCode>
+      <FileName>Engine\BlackjackRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.BlackjackResponse" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Engine\BlackjackResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.BlackjackTable" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACAEAACIABAAAAAAAAEEAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Engine\BlackjackTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.Dealer" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Dealer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.Player" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAQAAAAAAIAAAAAABAAAAAA=</HashCode>
+      <FileName>Engine\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Engine.Table" Collapsed="true">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAAICAADAAgABEAAAARAUAAAAgAAAAIAACBAASAAA=</HashCode>
+      <FileName>Engine\Table.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Hands.BlackjackHand" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAABAAggAAAAAA=</HashCode>
+      <FileName>Hands\BlackjackHand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Games.Common.Hands.Hand" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAQEgAAAAAQIAAAAAKAAAAAgAABAAAA=</HashCode>
+      <FileName>Hands\Hand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="Games.Common.Cards.SuitEnum" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAEAAAAAAAAABAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Cards\SuitEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Games.Common.Cards.SymbolEnum" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAggAAAEAAEAIAAAAAFBAAAAAgAAAgAAGE=</HashCode>
+      <FileName>Cards\SymbolEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Games.Common.Engine.BlackjackAction" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABACAIAAgAAAAAAAAgQAAAAAAAAAEA=</HashCode>
+      <FileName>Engine\BlackjackAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Games.Common.Engine.BlackjackResult" Collapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAgAAAACAAAAAABAAAAA=</HashCode>
+      <FileName>Engine\BlackjackResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Games.Common.Engine.PlayerStateEnum" Collapsed="true">
+    <Position X="1.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAACAAAIAAAQAAAAAAAAQQAACAA=</HashCode>
+      <FileName>Engine\PlayerStateEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Games.Common.Engine.TableState" Collapsed="true">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Engine\TableState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

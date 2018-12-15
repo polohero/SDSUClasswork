@@ -1,0 +1,5 @@
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Common\bin\Release\Common.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Common\bin\Release\Common.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Common\obj\Release\ResolveAssemblyReference.cache
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Common\obj\Release\Common.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Common\obj\Release\Common.pdb

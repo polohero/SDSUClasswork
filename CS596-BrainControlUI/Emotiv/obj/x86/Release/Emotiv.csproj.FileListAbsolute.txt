@@ -1,0 +1,7 @@
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\bin\Debug\edk.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\bin\Debug\Emotiv.dll.config
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\bin\Debug\Emotiv.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\bin\Debug\Emotiv.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\obj\x86\Release\Emotiv.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\GamesWithMP\Games\Emotiv\obj\x86\Release\Emotiv.pdb

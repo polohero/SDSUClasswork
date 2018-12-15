@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Emotiv SDK v2.0.0.20-LITE\doc\examples_DotNet\build\Debug\DotNetEmotivSDK-vs2010.dll.config
+C:\Program Files (x86)\Emotiv SDK v2.0.0.20-LITE\doc\examples_DotNet\build\Debug\DotNetEmotivSDK-vs2010.dll
+C:\Program Files (x86)\Emotiv SDK v2.0.0.20-LITE\doc\examples_DotNet\build\Debug\DotNetEmotivSDK-vs2010.pdb
+C:\Program Files (x86)\Emotiv SDK v2.0.0.20-LITE\doc\examples_DotNet\DotNetEmotivSDK\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Emotiv SDK v2.0.0.20-LITE\doc\examples_DotNet\DotNetEmotivSDK\obj\x86\Debug\DotNetEmotivSDK-vs2010.dll
+C:\Program Files (x86)\Emotiv SDK v2.0.0.20-LITE\doc\examples_DotNet\DotNetEmotivSDK\obj\x86\Debug\DotNetEmotivSDK-vs2010.pdb

@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.InstallLog
+   assemblypath = C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.exe
+Installing service BlackjackService...
+Service BlackjackService has been successfully installed.
+Creating EventLog source BlackjackService in log Application...
+Committing assembly 'C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.InstallLog
+   assemblypath = C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\BlackjackService\bin\Debug\BlackjackService.exe
