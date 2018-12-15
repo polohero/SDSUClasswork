@@ -1,0 +1,255 @@
+**********************************************************************
+* HEADER
+**********************************************************************
+Authors: 	Cory Wixom
+Unix Login: 	masc1454
+Class:		CS 570 Summer 2014
+Assignment 2
+
+Overall, after numerous tests (you’ll see them in the pages.txt file I have 
+in my a2 folder) I prefer the clock algorithm. I have not seen any cases 
+where it was "bad" unlike LRU which I found one string where no matter 
+how many frames you add it will not decrease the number of page faults.
+
+**********************************************************************
+* ASSIGNMENT REQUIREMENTS
+**********************************************************************
+CS570 Summer 2014 Assignment 2
+The program shall perform the following: 
+ Upon startup, prompt the user for the number of frames in main memory 
+ Read the sequence of pages accessed from the file "pages.txt" 
+ Run each of the algorithms (OPT, LRU, and Clock) on the same input string from the step above 
+ Printout the number of faults each algorithm generates to the terminal. 
+ 
+Perform an analysis of the page replacement algorithms: 
+ Use the simulation and page replacement algorithms developed in steps 1 and 2 above. 
+ Develop at least two different input data sets for analyzing the algorithms. 
+ The sequences of pages in these two sets should be designed such that they demonstrate 
+  the differences in the LRU vs Clock algorithms. 
+ Run the input sets through the simulation, collect the data. 
+   You should use at least two different memory systems (different numbers of frames) on each data set. 
+ Perform an analysis of the data (include controls, variables, outcomes, and input characterizations). 
+ Document your experiment and findings in your README file. -- Note, your README file shall contain the usual requirements for a README file (see 
+  READMEformat.pdf file posted on Blackboard) and it shall also include a summary of your findings from your analysis. 
+
+The assignment is due 1800 (6:00 PM) on Thursday, 5 June 2014
+
+**********************************************************************
+* COMPILE/EXECUTE INSTRUCTIONS 
+**********************************************************************
+make, or to manually g++ Page.cpp DataConverter.cpp FileHelper.cpp PageTable.cpp Program.cpp PageReplacementAlgorithm.cpp Fifo.cpp LRU.cpp Clock.cpp ClockNode.cpp Optimal.cpp SecondChanceFifo.cpp
+
+
+**********************************************************************
+* CLASS DIAGRAMS
+**********************************************************************
+
+/**
+ * The main program. This will excute the
+ * entire Assignment 2 application.
+ */
+Program.cpp
+
+/**
+ * A Page represents a single page in the page table.
+ */
+class Page
+	Page (int id);
+	int GetID();
+	void SetID(int id);
+	std::string ToString();
+	
+/**
+ * A page table represents a list of pages currently
+ * loaded into memory. It uses a dictionary lookup
+ * based on a integer pageid.
+ */
+class PageTable
+	PageTable();
+	Page Get(int pageID);
+	void Add(Page page);
+	void Remove(int pageID);
+	bool Exists(int pageID);
+	int Size();
+	std::vector<int> GetPages();
+
+/**
+ * A PageReplacementAlgorithm is the base class
+ * for each algorithm.
+ */
+class PageReplacementAlgorithm
+	/**
+	 * The constructor for an PageReplacementAlgorithm;
+	 */
+	PageReplacementAlgorithm (std::vector<int> pages, int numberOfFrames);
+	/**
+	 * Performs a memory get on the page table.
+	 */
+	virtual void DoIt(int pageID);
+	/**
+	 * The name of the algorithm for printing.
+	 */
+	virtual std::string Name();
+	/**
+	 * The current number of page faults.
+	 */
+	int NumberOfFaults();
+	/**
+	 * The current number of frames used.
+	 */
+	int NumberOfFrames();
+
+/**
+ * The optimal algorithm is a PageReplacementAlgorithm
+ * that is theoretical and cannot be created in
+ * a real environment.
+ */
+class Optimal : public PageReplacementAlgorithm
+	/**
+	 * The constructor for an Optimal;
+	 */
+	Optimal (std::vector<int> pages, int numberOfFrames);
+	/**
+	 * Performs a memory get on the page table.
+	 */
+	virtual void DoIt(int pageID);
+	/**
+	 * The name of the algorithm for printing.
+	 */
+	virtual std::string Name();
+	
+/**
+ * The LRU PageReplacementAlgorithm handles
+ * the logic of running a LRU page replacement
+ * on the pages passed in.
+ */
+class LRU : public PageReplacementAlgorithm
+	/**
+	 * The constructor for an LRU;
+	 */
+	LRU (std::vector<int> pages, int numberOfFrames);
+
+	/**
+	 * Performs a memory get on the page table.
+	 */
+	virtual void DoIt(int pageID);
+	/**
+	 * The name of the algorithm for printing.
+	 */
+	virtual std::string Name();
+	
+/**
+ * The Fifo PageReplacementAlgorithm handles
+ * the logic of running a Fifo page replacement
+ * on the pages passed in.
+ */
+class Fifo : public PageReplacementAlgorithm
+	/**
+	 * The constructor for an Fifo;
+	 */
+	Fifo (std::vector<int> pages, int numberOfFrames);
+
+	/**
+	 * Performs a memory get on the page table.
+	 */
+	virtual void DoIt(int pageID);
+	/**
+	 * The name of the algorithm for printing.
+	 */
+	virtual std::string Name();
+	
+/**
+ * The SecondChanceFifo PageReplacementAlgorithm handles
+ * the logic of running a Fifo page replacement
+ * on the pages passed in, but it also gives
+ * each page a second chance before being
+ * evicted.
+ */
+class SecondChanceFifo : public PageReplacementAlgorithm
+	/**
+	 * The constructor for an SecondChanceFifo;
+	 */
+	SecondChanceFifo (std::vector<int> pages, int numberOfFrames);
+
+	/**
+	 * Performs a memory get on the page table.
+	 */
+	virtual void DoIt(int pageID);
+	/**
+	 * The name of the algorithm for printing.
+	 */
+	virtual std::string Name();
+	
+/**
+ * A clock node is a node in a clock 
+ * paging algorithm.
+ */
+class ClockNode
+	/**
+	 * The constructor for an ClockNode;
+	 */
+	ClockNode (int pageID);
+	int PageID();
+	void SetPageID( int pageID);
+	bool Flag();
+	void SetFlag(bool flag);
+	
+/**
+ * The Clock PageReplacementAlgorithm handles
+ * the logic of running a clock page replacement
+ * on the pages passed in.
+ */
+class Clock : public PageReplacementAlgorithm
+	/**
+	 * The constructor for an Clock;
+	 */
+	Clock (std::vector<int> pages, int numberOfFrames);
+	/**
+	 * Performs a memory get on the page table.
+	 */
+	virtual void DoIt(int pageID);
+	/**
+	 * The name of the algorithm for printing.
+	 */
+	virtual std::string Name();
+	
+/**
+ * A static class that helps with file manipulations.
+ */
+class FileHelper
+	/**
+	 * Writes a single line in a file.
+	 */
+	static bool WriteLine(std::string fileName, std::string text);
+	/**
+	 * Checks to see if a file exists.
+	 */
+	static bool Exists(std::string fileName);
+	/**
+	 * Deletes a file from disk.
+	 */
+	static void Delete(std::string fileName);
+	/**
+	 * Reads the first line of the file.
+	 */
+	static std::string PeakLine(std::string fileName);
+	
+/**
+ * The DataConverter is a helper utility
+ * that will convert between different data types
+ * and parse data into different formats.
+ */
+/* static */ class DataConverter
+	static bool ConvertToIntFromHexString(int& t,const std::string& s,std::ios_base& (*f)(std::ios_base&));
+	static std::vector<int> SplitStringToInts(std::string str, char delimeter);
+	static std::string GetBinaryStringFromHexString (std::string hexString);
+	static std::string Rtrim(std::string s);
+	static std::string GetBinaryStringFromHexChar (char hexChar);
+	static int GetIntFromBinaryString (std::string binaryString);
+	static std::string GetNibble(int index, std::string instruction);
+	static std::string GetNibbles(int startIndex, int endIndex, std::string instruction);
+	static std::string GetIntToString(int number);
+	static int GetStringToInt(std::string str);
+	static std::string GetStringFromBool(bool flag);
+	static bool GetBoolFromChar(char flag);
+	static std::string ConvertIntToHex(int i);

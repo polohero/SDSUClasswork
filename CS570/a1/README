@@ -1,0 +1,233 @@
+**********************************************************************
+* HEADER
+**********************************************************************
+Authors: 	Cory Wixom
+Unix Login: 	masc1454
+Class:		CS 570 Summer 2014
+Assignment 1
+
+For this assignment I decided that it would probably be beneficial to
+create a library that would help out later in the class.
+So instead of just writing it normal, I encapsulated the POSIX calls in
+a Thread, Delegate and SemaphoreSlim class so that it will be reused
+in future assignments.
+
+**********************************************************************
+* ASSIGNMENT REQUIREMENTS
+**********************************************************************
+CS570 Summer 2014 Assignment 1
+This page last modified 18 May 2014
+You shall implement a program that manages multiple threads writing to a shared file.
+1. When your program starts, it shall do the following:
+	1. Create a file, SHARED.txt, in the current directory (cwd).
+	2. Write it's pid (Process ID) followed by a Carriage Return and Newline in the file.
+	3. Close the file SHARED.txt
+	4. Create a semaphore named SEM which the threads will use to manage access to the fileSHARED.txt.
+	5. Create 6 threads. Use the POSIX version of threads (i.e., pthread_create())
+	6. Block/wait for all six threads to complete their work.
+	7. Destroy the semaphore, then exit gracefully, printing a friendly message to the console
+2. Each thread shall perform the following (note, each thread is running concurrently):
+	1. Periodically (even numbered threads - once every two seconds, odd numbered threads onceevery 3 seconds) get the semaphore SEM; once the thread has SEM, it will proceed to do thefollowing:
+		1. Open the file SHARED.txt and write the tid (thread id) of that thread (followed by aCarriage Return and Newline)
+		2. Write to the console (print to stdout) Thread <thread id> is running followed by anewline
+		3. Close the file SHARED.txt
+		4. Release the semaphore SEM
+	2. Repeat 9 more times (each thread writes to the file and console a total of 10 times)
+3. exit
+
+You will need to use the following POSIX system calls for creating and managing the semaphores with:sem_init(), sem_wait(), sem_post(), and sem_destroy().
+I will test your program by compiling it and executing it on rohan. Your program shall be written such that it compiles and executes cleanly when using the cc, gcc, CC, or g++ compiler 
+You shall create a sub-directory named "a1" in your home directory. In it, you shall place your source file(s), your header file, 
+your Makefile (see Blackboard for examples on Makefiles), and a README file (see Blackboard for README
+requirements). Your source files SHALL CONTAIN sufficient comments for making the source easy to read.
+Points will be taken off for poorly (or non) commented source. Name the executable "sem".
+	Create ~/a1 by hand.
+	Create source files, an include file, a Makefile, and a README file. Put them into ~/a1.
+	The Makefile shall create an executable named "sem" in this same directory (~/a1).
+	Here is a nice overview of threads [http://www.llnl.gov/computing/tutorials/pthreads/#Overview]
+	The system call "system()" will NOT be allowed
+	
+The assignment is due 1800 (6:00 PM) on Thursday, 5 June 2014
+
+TURNING IN YOUR WORK:
+Make sure that all of your files (all source files, Makefile, README file, test files, etc) are in the a1 subdirectory
+of your class account and then follow the class assignment turnin procedures as specified in the
+instructions in Blackboard
+
+**********************************************************************
+* COMPILE/EXECUTE INSTRUCTIONS 
+**********************************************************************
+Windows:
+g++ Delegate.cpp Program.cpp Thread.cpp SemaphoreSlim.cpp FileHelper.cpp DataConverter.cpp -lpthread
+
+Unix: make to run the Makefile or manually, g++ -o sem Delegate.cpp ProgramUnix.cpp Thread.cpp SemaphoreSlim.cpp FileHelper.cpp DataConverter.cpp -lpthread -lrt
+
+**********************************************************************
+* CLASS DIAGRAMS
+**********************************************************************
+
+/***************************************
+ * The Thread class is a class that will
+ * handle multi threading operations.
+ ****************************************/
+Program.cpp (Main)
+	/**
+	 * Writes the data to the SHARED file and
+	 * the console.
+	 */
+	void writeThreadData(thread_data data);
+	/**
+	 * Handles the logic required for
+	 * running the threads.
+	 */
+	void* run(void* x);
+	/**
+	 * Logs the pid information in the
+	 * SHARED file.
+	 */
+	void logPid();
+	/**
+	 * Creates the delegate that is passed
+	 * to the thread to run.
+	 */
+	Delegate createDelegate(int i, string id);
+
+	/**
+	 * Starts all of the threads.
+	 */
+	void startThreads(Thread threads[], int length);
+	/**
+	 * Joins all of the threads to the main thread.
+	 */
+	void joinThreads(Thread threads[], int length);
+
+
+/**
+ * The Thread class is a class that will
+ * handle multi threading operations.
+ */
+class Thread
+	/**
+	 * Constructors. This will initialize the thread
+	 * but will not start the thread running yet.
+	 */
+	Thread();
+	Thread(Delegate starter);
+	Thread(Delegate starter, std::string name);
+
+	/**
+	 * Start running the thread.
+	 */
+	void Start();
+
+	/**
+	 * Returns the name of the thread.
+	 */
+	std::string Name();
+	/**
+	 * Returns the thread id of the thread.
+	 */
+	std::string ID();
+	/**
+	 * Exits the calling thread.
+	 */
+	static void Exit();
+
+	/**
+	 * Joins the calling thread with the POSIX thread
+	 * passed in.
+	 */
+	static void Join(Thread thread);
+	/**
+	 * Returns the thread id of the currently running thread.
+	 */
+	static std::string GetCurrentThreadID();
+	
+/**
+ * The Delegate class that holds a
+ * pointer to a function so it can be
+ * used by some other construct.
+ */
+class Delegate
+	/**
+	 * The Delegate constructor with the pointer to
+	 * a function.
+	 */
+	Delegate(functionPointer function);
+	Delegate(functionPointer function, void* argument);
+	Delegate();
+
+	/**
+	 * Gets the function being pointed to.
+	 */
+	 functionPointer GetFunction();
+
+	/**
+	 * Gets the argument used with this
+	 * delegate..
+	 */
+	 void* GetArgument();
+	 
+/**
+ * A semaphore implimentation that uses the
+ * POSIX implementation under the hood.
+ */
+class SemaphoreSlim
+	/**
+	 * Constructors
+	 */
+	SemaphoreSlim(int count);
+	SemaphoreSlim();
+	~SemaphoreSlim();
+	/**
+	 * Waits by 1 for the semaphore to become
+	 * free.
+	 */
+	void Wait();
+	/**
+	 * Releases by 1 the current semaphore.
+	 */
+	void Release();
+	/**
+	 * Returns the current number of threads
+	 * the semaphore will allow.
+	 */
+	int Count();
+	
+/**
+ * A single lock is a locking object that will only allow
+ * a single thread to go through a section of code.
+ */
+class FileHelper
+	/**
+	 * Writes a single line in a file.
+	 */
+	static bool WriteLine(std::string fileName, std::string text);
+	/**
+	 * Checks to see if a file exists.
+	 */
+	static bool Exists(std::string fileName);
+	/**
+	 * Deletes a file from disk.
+	 */
+	static void Delete(std::string fileName);
+	
+/**
+ * The DataConverter is a helper utility
+ * that will convert between hex, int, and
+ * binary in order to help us process the
+ * instructions.
+ */
+/* static */ class DataConverter
+
+	static bool ConvertToIntFromHexString(int& t,const std::string& s,std::ios_base& (*f)(std::ios_base&));
+	static std::string GetBinaryStringFromHexString (std::string hexString);
+	static std::string GetBinaryStringFromHexChar (char hexChar);
+	static int GetIntFromBinaryString (std::string binaryString);
+	static std::string GetNibble(int index, std::string instruction);
+	static std::string GetNibbles(int startIndex, int endIndex, std::string instruction);
+	static std::string GetIntToString(int number);
+	static int GetStringToInt(std::string str);
+	static std::string GetStringFromBool(bool flag);
+	static bool GetBoolFromChar(char flag);
+	static std::string ConvertIntToHex(int i);
