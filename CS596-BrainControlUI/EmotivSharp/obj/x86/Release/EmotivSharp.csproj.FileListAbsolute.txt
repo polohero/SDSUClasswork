@@ -1,0 +1,7 @@
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\OutPut\edk.dll
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\OutPut\edk_utils.dll
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\OutPut\EmotivSharp.dll
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\OutPut\EmotivSharp.pdb
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\EmotivSharp\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\EmotivSharp\obj\x86\Release\EmotivSharp.dll
+C:\Users\cwixom\Desktop\EmotivSharp v0.4.5\EmotivSharp\obj\x86\Release\EmotivSharp.pdb

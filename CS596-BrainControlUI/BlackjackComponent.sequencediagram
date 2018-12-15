@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="cc93aaa8-b67c-44f7-9b6c-81c90e4349d8" name="SequenceDiagram1" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="02f5e41d-7c19-4c0d-b7b4-1a0dbe83e375" name="SequenceDiagram1" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <ownedCommentsInternal>
+          <comment Id="618aa7c1-f5d1-41f5-a301-50afc44e2a59">
+            <body>An event is triggered in the Emotiv API that the client processes. The user can think either a PUSH or a LEFT. Push means stay, left means hit.</body>
+          </comment>
+          <comment Id="848ee577-4e69-4f68-9ddb-eb4afac6ce56">
+            <body>The client is polling every second and sending a GET request to the service to get the latest status of the table.</body>
+            <annotatedElements>
+              <behaviorExecutionSpecificationMoniker Id="fc544c24-5a71-4f58-a70b-2d94eb6d5d77" LastKnownName="BehaviorExecutionSpecification" />
+            </annotatedElements>
+          </comment>
+          <comment Id="b2cd9ad3-2c5d-4dca-9a44-ecfbd081edfc">
+            <body>Start can also come from Emotiv. Through a Push action.</body>
+            <annotatedElements>
+              <behaviorExecutionSpecificationMoniker Id="4c306dc9-f445-4d5f-8d1c-91a6a9c9469d" LastKnownName="BehaviorExecutionSpecification" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <behaviorExecutionSpecification Id="b789b67c-453a-450d-9f16-b346ffb47793" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="a8845edc-db03-44a6-a2ca-3e83df150da6" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="e2223d3e-454e-41a2-86b8-0468ed895702" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="922fd8a8-936b-4a2a-835c-2f9b443575f9" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="e2223d3e-454e-41a2-86b8-0468ed895702" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="36f48c79-31a0-46ee-852e-9c8c615de5cd" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="922fd8a8-936b-4a2a-835c-2f9b443575f9" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="1fb7ea0f-863b-4b2b-b30b-6b8249d15429" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="a8845edc-db03-44a6-a2ca-3e83df150da6" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="37529fed-9e1f-4fd6-b276-2fb69bd7bb3f" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="beab68fd-2ee8-429e-990c-a0f6c6560f08" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="58c63f7c-0ae6-4a9e-a604-ee09b81d7ddf" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="9c2a4026-a10a-4940-8ae6-63fe79b5029a" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="a9cec202-24b8-4818-8e99-fb4c0242bddc" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="9c2a4026-a10a-4940-8ae6-63fe79b5029a" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="bff3b6a2-acdd-4d34-935d-aed70fc9d574" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a9cec202-24b8-4818-8e99-fb4c0242bddc" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="08039aef-1df7-41b3-944f-bf50637482b8" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="58c63f7c-0ae6-4a9e-a604-ee09b81d7ddf" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="d7f7f9d3-826b-4b98-8c7d-37b3046e8fc4" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="b6a32f7b-53bf-4402-a342-f9963c863770" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="42b886c7-9554-46be-932b-2efd46b7dd00" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="f61e5611-53cb-4276-bf27-68e062b3b805" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="ff8a46b4-e70c-4fa5-81f6-7a1a14906463" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="e020cffb-7656-4736-95b9-92e7dc76a886" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="f61e5611-53cb-4276-bf27-68e062b3b805" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="2aea5ec5-d877-4af4-924b-534a2417625f" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="ff8a46b4-e70c-4fa5-81f6-7a1a14906463" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="1a4e1a99-f126-4fed-8b4a-daccb4216621" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="e020cffb-7656-4736-95b9-92e7dc76a886" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a45a1596-4f36-4e2f-b2dd-4e6ca9b862c8" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="42b886c7-9554-46be-932b-2efd46b7dd00" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="b0904320-c124-42f4-8611-96450591ff1c" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="207575cf-6471-4bb2-b31d-c9d6ea4f46e4" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="d036782c-048e-4eb8-80a5-67db0836d043" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="9db7ecd2-b8cb-44cc-9719-2ce2d9aa8559" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="16b51faa-59dd-421b-b9ce-03f6f5c58259" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="9db7ecd2-b8cb-44cc-9719-2ce2d9aa8559" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="20efa1cd-523d-4a7f-823e-d426738a47de" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4f6a4124-f2bc-43fb-a32f-4f12dd465518" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="16b51faa-59dd-421b-b9ce-03f6f5c58259" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="4c306dc9-f445-4d5f-8d1c-91a6a9c9469d" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="31a43c74-812a-4766-b172-ceaa3d33f747" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="6b10c5a0-8d87-4e62-bf7f-86a83e1102e1" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="08565043-8576-4b63-a345-77e25392f837" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="6b10c5a0-8d87-4e62-bf7f-86a83e1102e1" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="5a8f20e7-7171-4992-b1ae-848fd96704ca" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="08565043-8576-4b63-a345-77e25392f837" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="f7ea3400-d99c-4af5-8ba6-3202be21cc64" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="d036782c-048e-4eb8-80a5-67db0836d043" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="313dca2b-98e0-4352-9b07-b88c940edbdd" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="31a43c74-812a-4766-b172-ceaa3d33f747" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="27b56caf-a7f4-49d8-9791-f6b0f0b35b4f" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="fc544c24-5a71-4f58-a70b-2d94eb6d5d77" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="a8f1de48-1c07-4b0b-b0ae-fea684565274" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="964e63e7-b865-458a-ad29-ef5a26b71530" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="f54c5f06-ebe0-4e49-8687-07ed3e91ca1d" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="ce35753b-f0b3-4d04-97c9-79f517650c81" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="964e63e7-b865-458a-ad29-ef5a26b71530" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="a77c80fa-dc0d-44da-9f3b-1bc146eb4746" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="f54c5f06-ebe0-4e49-8687-07ed3e91ca1d" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b302ff37-fb62-4523-ae5d-f03659b5cc38" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="ce35753b-f0b3-4d04-97c9-79f517650c81" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="fc6b8b8f-844e-4c78-a0ac-82c803f62106" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="a8f1de48-1c07-4b0b-b0ae-fea684565274" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="14504d3d-2e82-49ef-bbac-3bdae52319ea" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="570a1c11-44a0-4171-8223-9342ded146e1" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="13e29feb-b4c2-471b-b0eb-e6cd248088e1" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="874287ab-d886-4d61-afcb-80d7983b7832" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="00594ed3-72a2-433f-95ff-d5be83f54484" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="b3afbf48-4977-4a90-b417-a4973094b170" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="9fdab0fb-c845-451d-87a5-7333fed36136" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="874287ab-d886-4d61-afcb-80d7983b7832" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="415fc9f3-15e4-432c-94e6-5094de0d12b5" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="00594ed3-72a2-433f-95ff-d5be83f54484" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a9b13ab0-4da9-450b-9a5f-a6c095de6e23" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="507d0075-86fd-44aa-b76f-1741299f3751" LastKnownName="Emotiv" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="1aadfec9-346f-44ab-aeca-e24cee0f40ad" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="ab6f4d3e-31ad-4172-ac2a-cb483be8e6d0" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="d63b82c5-75dc-4195-af43-4a09571da643" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="e1bac3db-9f4f-4774-9e82-320f21e6f4dc" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="b0f72319-8002-4e43-b7e2-b6d19c7e61db" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="d63b82c5-75dc-4195-af43-4a09571da643" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="dfed1f8a-cf44-43bd-a505-5255499f0577" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b3afbf48-4977-4a90-b417-a4973094b170" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="e1bac3db-9f4f-4774-9e82-320f21e6f4dc" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="9fdab0fb-c845-451d-87a5-7333fed36136" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="b0f72319-8002-4e43-b7e2-b6d19c7e61db" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="ab6f4d3e-31ad-4172-ac2a-cb483be8e6d0" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="92023840-db2e-4902-8a5f-e4eafd44e089" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="13e29feb-b4c2-471b-b0eb-e6cd248088e1" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="ed5a4ccb-ed4a-4d82-93fe-3ae7a9e79cbb" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="3bdf13ff-cb9b-4200-bc5a-023ab504ddd2" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="5ef86ee6-34b5-4655-9934-bc952024d46d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="0b82ab23-d3f6-4dcb-9019-be9800500bfb" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="fa101b12-8a42-4106-9e7b-ef892186dee7" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="0b82ab23-d3f6-4dcb-9019-be9800500bfb" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="2b2895bb-671a-4848-99f0-facbb65e6cfe" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="fa101b12-8a42-4106-9e7b-ef892186dee7" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="23ca9a5f-552c-46fb-9947-645941ba4142" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" LastKnownName="Blackjack Client" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="5ef86ee6-34b5-4655-9934-bc952024d46d" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="e75b61b7-f58f-44d5-a318-9286c02f4fa9" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" LastKnownName="Blackjack Service" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="fdb76cd6-1deb-4923-84c8-44ea0a84fff9" name="Blackjack Client" isActor="false" lifelineDisplayName="Blackjack Client">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="1fb7ea0f-863b-4b2b-b30b-6b8249d15429" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="08039aef-1df7-41b3-944f-bf50637482b8" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="1a4e1a99-f126-4fed-8b4a-daccb4216621" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="a45a1596-4f36-4e2f-b2dd-4e6ca9b862c8" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="4f6a4124-f2bc-43fb-a32f-4f12dd465518" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="f7ea3400-d99c-4af5-8ba6-3202be21cc64" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="b302ff37-fb62-4523-ae5d-f03659b5cc38" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="fc6b8b8f-844e-4c78-a0ac-82c803f62106" LastKnownName="MessageOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="874287ab-d886-4d61-afcb-80d7983b7832" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="13e29feb-b4c2-471b-b0eb-e6cd248088e1" LastKnownName="ExecutionOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="23ca9a5f-552c-46fb-9947-645941ba4142" LastKnownName="MessageOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="d40300fe-dec7-4832-9fbd-0526e7e783f9" name="Blackjack Service" isActor="false" lifelineDisplayName="Blackjack Service">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="e2223d3e-454e-41a2-86b8-0468ed895702" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="a8845edc-db03-44a6-a2ca-3e83df150da6" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="6b10c5a0-8d87-4e62-bf7f-86a83e1102e1" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="31a43c74-812a-4766-b172-ceaa3d33f747" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="964e63e7-b865-458a-ad29-ef5a26b71530" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="a8f1de48-1c07-4b0b-b0ae-fea684565274" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="d63b82c5-75dc-4195-af43-4a09571da643" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="ab6f4d3e-31ad-4172-ac2a-cb483be8e6d0" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="0b82ab23-d3f6-4dcb-9019-be9800500bfb" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="5ef86ee6-34b5-4655-9934-bc952024d46d" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="507d0075-86fd-44aa-b76f-1741299f3751" name="Emotiv" isActor="false" lifelineDisplayName="Emotiv">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="9c2a4026-a10a-4940-8ae6-63fe79b5029a" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="58c63f7c-0ae6-4a9e-a604-ee09b81d7ddf" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f61e5611-53cb-4276-bf27-68e062b3b805" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="42b886c7-9554-46be-932b-2efd46b7dd00" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="9db7ecd2-b8cb-44cc-9719-2ce2d9aa8559" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="d036782c-048e-4eb8-80a5-67db0836d043" LastKnownName="ExecutionOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="a9b13ab0-4da9-450b-9a5f-a6c095de6e23" LastKnownName="MessageOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="8b8c224d-56e1-45f0-ae00-46976d0dd85e" name="JoinTable" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="1fb7ea0f-863b-4b2b-b30b-6b8249d15429" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="922fd8a8-936b-4a2a-835c-2f9b443575f9" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="4cd13061-ff28-4a82-832a-3ccd56439214" name="Connect" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="08039aef-1df7-41b3-944f-bf50637482b8" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="a9cec202-24b8-4818-8e99-fb4c0242bddc" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="e51ad3ac-e0b2-432d-84c4-f77e68cc6e62" name="Accept Training" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="4f6a4124-f2bc-43fb-a32f-4f12dd465518" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="16b51faa-59dd-421b-b9ce-03f6f5c58259" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="57c10af1-cf2a-455e-bfd7-044dcd53614e" name="Push/Left" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="a9b13ab0-4da9-450b-9a5f-a6c095de6e23" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="00594ed3-72a2-433f-95ff-d5be83f54484" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="9345e9b6-b3f8-4d18-97d0-2540003542ac" name="Stay/Hit" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="b3afbf48-4977-4a90-b417-a4973094b170" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="e1bac3db-9f4f-4774-9e82-320f21e6f4dc" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="4bfbeb50-bd30-416a-9a43-064f19492727" name="Status of Blackjack Table" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="b0f72319-8002-4e43-b7e2-b6d19c7e61db" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="9fdab0fb-c845-451d-87a5-7333fed36136" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="a0084b72-d272-472d-9493-a8ebb13a5399" name="Get" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="b302ff37-fb62-4523-ae5d-f03659b5cc38" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="f54c5f06-ebe0-4e49-8687-07ed3e91ca1d" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="3abd08f1-bd41-4773-b21c-753aa8d14b1c" name="Status of Blackjack Table" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="ce35753b-f0b3-4d04-97c9-79f517650c81" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="fc6b8b8f-844e-4c78-a0ac-82c803f62106" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="d06c0d49-9c3c-4d58-a376-78257d48c4c9" name="Train Neutral, Push, Left" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="1a4e1a99-f126-4fed-8b4a-daccb4216621" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="ff8a46b4-e70c-4fa5-81f6-7a1a14906463" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="633897ba-f636-4a71-b9d0-5ce97d1790b5" name="Train OK" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="e020cffb-7656-4736-95b9-92e7dc76a886" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="a45a1596-4f36-4e2f-b2dd-4e6ca9b862c8" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="59365f99-24d3-495d-a15c-380f457c6640" name="Leave Table" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="23ca9a5f-552c-46fb-9947-645941ba4142" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="fa101b12-8a42-4106-9e7b-ef892186dee7" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="82aae192-093d-4ca2-9266-0e4e51a63d33" name="Start" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="f7ea3400-d99c-4af5-8ba6-3202be21cc64" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="08565043-8576-4b63-a345-77e25392f837" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="36f48c79-31a0-46ee-852e-9c8c615de5cd" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="37529fed-9e1f-4fd6-b276-2fb69bd7bb3f" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="bff3b6a2-acdd-4d34-935d-aed70fc9d574" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="d7f7f9d3-826b-4b98-8c7d-37b3046e8fc4" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="20efa1cd-523d-4a7f-823e-d426738a47de" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="313dca2b-98e0-4352-9b07-b88c940edbdd" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="415fc9f3-15e4-432c-94e6-5094de0d12b5" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="ed5a4ccb-ed4a-4d82-93fe-3ae7a9e79cbb" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="dfed1f8a-cf44-43bd-a505-5255499f0577" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="92023840-db2e-4902-8a5f-e4eafd44e089" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="a77c80fa-dc0d-44da-9f3b-1bc146eb4746" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="14504d3d-2e82-49ef-bbac-3bdae52319ea" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="2aea5ec5-d877-4af4-924b-534a2417625f" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="b0904320-c124-42f4-8611-96450591ff1c" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="2b2895bb-671a-4848-99f0-facbb65e6cfe" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="e75b61b7-f58f-44d5-a318-9286c02f4fa9" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="5a8f20e7-7171-4992-b1ae-848fd96704ca" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="27b56caf-a7f4-49d8-9791-f6b0f0b35b4f" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>

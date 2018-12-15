@@ -1,0 +1,14 @@
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\bin\Debug\Tests.dll
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\bin\Debug\Tests.pdb
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\bin\Debug\Common.dll
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\bin\Debug\Common.pdb
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\obj\Debug\Tests.dll
+C:\Users\cwixom\Documents\visual studio 2010\Projects\Games\Tests\obj\Debug\Tests.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\bin\Debug\Tests.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\bin\Debug\Tests.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\bin\Debug\Common.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\bin\Debug\Common.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\obj\Debug\Tests.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Tests\obj\Debug\Tests.pdb
