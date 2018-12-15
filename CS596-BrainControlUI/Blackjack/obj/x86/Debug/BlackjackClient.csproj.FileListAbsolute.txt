@@ -1,0 +1,16 @@
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Blackjack.exe.config
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\edk.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Blackjack.exe
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Blackjack.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Common.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Emotiv.dll
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Common.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\bin\Debug\Emotiv.pdb
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\Games.BlackjackClient.Form1.resources
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\Games.BlackjackClient.Properties.Resources.resources
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\Blackjack.exe
+C:\Users\cwixom\Documents\Visual Studio 2010\Projects\Games\Games\Blackjack\obj\x86\Debug\Blackjack.pdb
+C:\Users\cwixom\Desktop\Games\Blackjack\bin\Debug\Blackjack.exe.config
