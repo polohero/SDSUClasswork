@@ -67,14 +67,15 @@ namespace Games.Common.Engine
         private BlackjackResponse processChat(BlackjackRequest request)
         {
             BlackjackTable table = (BlackjackTable)_tables.Get(request.Table.ID);
-
-            BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
-
+            
             if (null == table)
             {
                 throw new Exception(
                     "Cannot perform action. Table does not exist.");
             }
+
+            BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
+
             if (null == player)
             {
                 throw new Exception(
