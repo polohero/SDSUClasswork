@@ -67,7 +67,6 @@ namespace Games.Common.Engine
         private BlackjackResponse processChat(BlackjackRequest request)
         {
             BlackjackTable table = (BlackjackTable)_tables.Get(request.Table.ID);
-            
             if (null == table)
             {
                 throw new Exception(
@@ -75,7 +74,6 @@ namespace Games.Common.Engine
             }
 
             BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
-
             if (null == player)
             {
                 throw new Exception(
@@ -98,14 +96,13 @@ namespace Games.Common.Engine
         private BlackjackResponse processGet(BlackjackRequest request)
         {
             BlackjackTable table = (BlackjackTable)_tables.Get(request.Table.ID);
-
-            BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
-
             if (null == table)
             {
                 throw new Exception(
                     "Cannot perform action. Table does not exist.");
             }
+
+            BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
             if (null == player)
             {
                 throw new Exception(
@@ -125,7 +122,6 @@ namespace Games.Common.Engine
         private BlackjackResponse processEvaluate(BlackjackRequest request)
         {
             BlackjackTable table = (BlackjackTable)_tables.Get(request.Table);
-
 
             if (null == table)
             {
@@ -225,7 +221,6 @@ namespace Games.Common.Engine
         private BlackjackResponse processHit(BlackjackRequest request)
         {
             BlackjackTable table = (BlackjackTable)_tables.Get(request.Table);
-
             if (null == table)
             {
                 throw new Exception(
@@ -288,14 +283,13 @@ namespace Games.Common.Engine
         private BlackjackResponse processLeaveTable(BlackjackRequest request)
         {
             BlackjackTable table = (BlackjackTable)_tables.Get(request.Table);
-
-            BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
-
             if (null == table)
             {
                 throw new Exception(
                     "Cannot perform action. Table does not exist.");
             }
+
+            BlackjackPlayer player = (BlackjackPlayer)table.Get(request.Player);
             if (null == player)
             {
                 throw new Exception(
