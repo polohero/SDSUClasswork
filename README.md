@@ -1,1 +1,1 @@
-This repository shows classwork I did at SDSU for undergraduate classes.
+This repository shows classwork I did at SDSU for classes.
